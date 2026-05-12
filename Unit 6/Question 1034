@@ -1,0 +1,51 @@
+import java.io.IOException;
+import java.util.*;
+
+    public class Main {
+	public static int Result(int N,int M) {
+		Scanner sc = new Scanner(System.in);
+		short Maior = 1;
+		int Atual = M;
+		int Result = 1;
+		int Final = 0;
+		int cont = 0;
+		short[] n = new short[N];
+
+		for(int i = 0; i<N; i++) {
+			n[i] = sc.nextShort();
+		}
+
+		while(Result != 0) {
+			Result = M/Maior;
+			if(M/Maior == 1){
+				if(cont>1) {
+					return 1;
+				}
+				cont++;
+			}else{
+              
+			}
+			for(int i = 0; i < N; i++) {
+				if(Maior < n[i] && n[i] <= Atual) {
+					Maior = n[i];
+				}
+			}
+		}
+		return Final;
+	}
+
+	public static void main(String[] args) throws IOException {
+		Scanner sc = new Scanner(System.in);
+		short N = 0;
+		int M = 0;
+		int L = 0;
+		L = sc.nextInt();
+		for(int i = 0; i < L; i++) {
+			N = sc.nextShort();
+			M = sc.nextInt();
+			int R = Result(N,M);
+			System.out.println(R);
+		}
+	}
+
+}
